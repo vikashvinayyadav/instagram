@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram/screens/signin_screen.dart';
 
 class MainScreen extends StatefulWidget{
    @override 
@@ -8,8 +9,6 @@ class MainScreen extends StatefulWidget{
 class MainScreenState extends State<MainScreen>{
    @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body:Text('United India')
-    );
+    return SignInScreen();
   }
 }
