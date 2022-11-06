@@ -38,4 +38,21 @@ class AuthMethods{
       return result;
     }
 
+    Future<String> signInUser({
+      required String email,
+      required String password,
+    })async {
+      String result ='Some erro occured';
+       try{
+         if(email.isNotEmpty || password.isNotEmpty){
+           await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
+         }else{
+           result ='Please enter your all fields';
+         }
+       }catch(error){
+         print(result);
+       }
+
+       return result;
+    }
 }

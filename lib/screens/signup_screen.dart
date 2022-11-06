@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram/resources/auth_methods.dart';
+import 'package:instagram/utilis/global_variables.dart';
 import 'package:instagram/widgets/text_type_input.dart';
 
 class SignUpScreen extends StatefulWidget{
@@ -44,7 +45,8 @@ class SignUpScreenState extends State<SignUpScreen>{
       resizeToAvoidBottomInset:false,
       body:Container(
         width:double.infinity,
-        padding:const EdgeInsets.symmetric(horizontal:32),
+        padding:MediaQuery.of(context).size.width > webScreenSize ? EdgeInsets.symmetric(horizontal:MediaQuery.of(context).size.width /3):
+        const EdgeInsets.symmetric(horizontal:32),
         child:Column(
           crossAxisAlignment:CrossAxisAlignment.center,
           children:[
@@ -53,7 +55,8 @@ class SignUpScreenState extends State<SignUpScreen>{
               child:Container()
             ),
             Container(
-              margin:const EdgeInsets.symmetric(horizontal:32,vertical:24),
+              margin:const EdgeInsets.symmetric(
+                horizontal:32,vertical:24),
               child:Image.asset(
                 'lib/assets/logo.png',
                  color:Colors.white,
@@ -111,8 +114,11 @@ class SignUpScreenState extends State<SignUpScreen>{
               ),
             ): const CircularProgressIndicator(color:Colors.white,)
            )),
-           const SizedBox(height:40,),
-           Row(
+           const SizedBox(height:12,),
+           Flexible(flex:2,child:Container()),
+           Container(
+            padding:const EdgeInsets.symmetric(vertical:8),
+            child:Row(
             crossAxisAlignment:CrossAxisAlignment.center,
             mainAxisAlignment:MainAxisAlignment.center,
             children: [
@@ -125,9 +131,9 @@ class SignUpScreenState extends State<SignUpScreen>{
                   color:Colors.blue,
                   fontSize:26,
                 )),
-              )
+              ),
             ],
-           ),
+           )),
           ],
         ),
       ),

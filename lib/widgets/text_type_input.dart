@@ -31,7 +31,7 @@ class TextTypeInput extends StatelessWidget{
         enabledBorder:inputBoder,
         disabledBorder:inputBoder,
         filled:true,
-        contentPadding:const EdgeInsets.all(12),
+        contentPadding:const EdgeInsets.all(8),
       ),
       obscureText:ispass,
       keyboardType: textTypeInput,
