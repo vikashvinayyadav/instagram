@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram/screens/splash_screen.dart';
 
 void main(){
   runApp(
@@ -12,10 +13,12 @@ class MyApp extends StatelessWidget{
    const MyApp({super.key});
    @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home:Scaffold(
-        body:Center(child:Text('All india radio')),
+    return MaterialApp(
+      debugShowCheckedModeBanner:false,
+      theme:ThemeData.dark().copyWith(
+        scaffoldBackgroundColor:Colors.black,
       ),
+      home:const SplashScreen(),
     );
   }
 }
