@@ -11,20 +11,23 @@ class SplashScreenState extends State<SplashScreen>{
    @override 
      void initState(){
        super.initState();
-       navigate();
+        WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+           Future.delayed(const Duration(seconds:3),()=> navigateToMain());
+        });
      }
 
-     navigate(){
-       Future.delayed(const Duration(seconds:3),(){});
-       WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-        Navigator.pushReplacement(context,MaterialPageRoute(builder:(context)=>MainScreen()));
-       });
+     navigateToMain(){
+       Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => MainScreen()));
      }
    @override
   Widget build(BuildContext context)=>Scaffold(
     body:Container(
+       padding:const EdgeInsets.symmetric(horizontal:32),
       child:Center(
-        child:Image.asset('lib/assets/logo.png')
+        child:Image.asset(
+          'lib/assets/logo.png',
+          color:Colors.white
+        )
       ),
     ),
   );
