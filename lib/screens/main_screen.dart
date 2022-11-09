@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:instagram/screens/signin_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:instagram/screens/signup_screen.dart';
 
 class MainScreen extends StatefulWidget{
    @override 
@@ -40,7 +41,7 @@ class MainScreenState extends State<MainScreen>{
                 ),
                );
             }
-         return const SignInScreen();
+         return const SignUpScreen();
       },
     );
   }

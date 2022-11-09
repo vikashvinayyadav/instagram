@@ -13,9 +13,11 @@ class SignInScreenState extends State<SignInScreen>{
    @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset:false,
       body:Container(
         padding:const EdgeInsets.symmetric(horizontal:32),
         child:Column(
+          crossAxisAlignment:CrossAxisAlignment.center,
           children: [
              Flexible(
               flex:2,
@@ -25,7 +27,7 @@ class SignInScreenState extends State<SignInScreen>{
               margin:const EdgeInsets.symmetric(horizontal:32),
               child:Image.asset(
                 'lib/assets/logo.png',
-                color:Colors.white
+                color:Colors.white,
               ),
              ),
              const SizedBox(height:64),
@@ -47,6 +49,7 @@ class SignInScreenState extends State<SignInScreen>{
               onTap:(){},
               child:Container(
                 width:double.infinity,
+                height:48,
                 decoration:const ShapeDecoration(
                   color:Colors.blue,
                   shape:RoundedRectangleBorder(
@@ -54,22 +57,33 @@ class SignInScreenState extends State<SignInScreen>{
                   ),
                 ),
                 alignment:Alignment.center,
-                child:const Text('Sign In'),
+                child:const Text('Sign In',style:TextStyle(
+                  fontSize:24,
+                )),
               ),
             ),
              Flexible(
               flex:2,
               child:Container()
             ),
-             Row(
+             Container(
+              padding:const EdgeInsets.only(left:5,right:5),
+              child:Row(
+              crossAxisAlignment:CrossAxisAlignment.center,
+              mainAxisAlignment:MainAxisAlignment.center,
               children: [
-                const Text('I have not any account ? '),
+                const Text('I have not any account ? ',style:TextStyle(
+                  fontSize:19
+                )),
                 GestureDetector(
                   onTap: (){},
-                  child:const Text('Sign Up'),
+                  child:const Text('Sign Up',style:TextStyle(
+                    fontSize: 20,
+                    color:Colors.blue,
+                  )),
                 )
               ],
-             ),
+             )),
           ],
         ),
       ),

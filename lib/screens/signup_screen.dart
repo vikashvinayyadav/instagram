@@ -14,6 +14,7 @@ class SignUpScreenState extends State<SignUpScreen>{
   final TextEditingController passwordController = TextEditingController();
    @override
   Widget build(BuildContext context)=>Scaffold(
+    resizeToAvoidBottomInset:false,
     body:Container(
       padding:const EdgeInsets.symmetric(horizontal:32),
       child:Column(
@@ -59,23 +60,33 @@ class SignUpScreenState extends State<SignUpScreen>{
             onTap:(){},
             child:Container(
               alignment:Alignment.center,
+              height:48,
               decoration:const ShapeDecoration(
                 color:Colors.blue,
                 shape:RoundedRectangleBorder(
                   borderRadius:BorderRadius.all(Radius.circular(8)),
                 ),
               ),
-              child:const Text('Sign Up'),
+              child:const Text('Sign Up',style:TextStyle(
+                fontSize: 24
+              )),
             ),
            ),
           const SizedBox(height:24),
           Flexible(flex:2,child:Container()),
           Row(
+            crossAxisAlignment:CrossAxisAlignment.center,
+            mainAxisAlignment:MainAxisAlignment.center,
             children: [
-              const Text('I already have a account ? '),
+              const Text('I have already a account ? ',style:TextStyle(
+                fontSize:19,
+              ),),
               GestureDetector(
                 onTap:(){},
-                child:const Text('Sign In'),
+                child:const Text('Sign In',style:TextStyle(
+                  color:Colors.blue,
+                  fontSize:19.5
+                )),
               )
             ],
           ),
